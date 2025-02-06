@@ -558,6 +558,55 @@ input, select, textarea {
 			font-weight: 900;
 			letter-spacing: -0.035em;
 			line-height: 1em;
+			position: relative;
+			white-space: nowrap;
+			width: max-content;
+			margin: 0 auto;
+			color: transparent;
+			overflow: hidden;
+		}
+
+		#header h1:before {
+			content: "Pratik Thapa";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			color: #fff;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 0;
+			border-right: 2px solid transparent;
+			animation: typing 10s steps(11) 0s infinite,
+					   blink-caret 0.5s step-end infinite;
+		}
+
+		@keyframes typing {
+			0%, 6% {
+				width: 0;
+			}
+			12%, 44% {
+				width: 100%;
+			}
+			50%, 56% {
+				width: 0;
+			}
+			62%, 94% {
+				width: 100%;
+			}
+			100% {
+				width: 0;
+			}
+		}
+
+		@keyframes blink-caret {
+			from, to { border-right-color: transparent }
+			50% { border-right-color: #fff }
+		}
+
+		/* Remove the old cursor animations and elements */
+		#header h1:after {
+			display: none;
 		}
 
 		#header p {
